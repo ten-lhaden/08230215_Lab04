@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Learning Journey</title>
+  <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <a href="{% url 'index' %}">Home / Learning Journey</a>
+        <a href="{% url 'about_me' %}">About Me</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <section class="intro">
+      <h1>My Learning Journey</h1>
+      <p>Here’s a snapshot of how I’ve grown over the years, what I’ve learned, and the skills I’m proud to carry with me.</p>
+    </section>
+
+    <section class="journey">
+      <h2>Timeline of Learning</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Focus / Achievement</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for year in learning_years %}
+            <tr>
+              <td>{{ year.year }}</td>
+              <td>{{ year.achievement }}</td>
+            </tr>
+          {% empty %}
+            <tr>
+              <td colspan="2">No learning years recorded yet.</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+
+    <section class="skills">
+      <h2>My Skills</h2>
+      <div class="skills">
+        {% for skill in skills %}
+          <span class="skill-tag">{{ skill.name }} ({{ skill.level }})</span>
+        {% empty %}
+          <p>No skills recorded yet.</p>
+        {% endfor %}
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="container">
+      &copy; {{ current_year }} [Your Name]. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>

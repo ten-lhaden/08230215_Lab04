@@ -1,0 +1,141 @@
+/* Reset some defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #f9f9f9;
+}
+
+/* Container for consistent width */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Header / navigation if needed */
+header {
+  background: #fff;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+header .nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+header .nav a {
+  text-decoration: none;
+  color: #555;
+  padding: 0.5rem;
+  transition: color 0.3s;
+}
+header .nav a:hover {
+  color: #000;
+}
+
+/* Section titles */
+h1, h2 {
+  color: #222;
+  margin-bottom: 1rem;
+}
+h2 {
+  margin-top: 2rem;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 0.5rem;
+}
+
+/* About Me page specific */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.profile img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #ddd;
+}
+.profile .desc {
+  flex: 1;
+}
+
+/* Hobbies list */
+.hobbies {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  margin-top: 1rem;
+}
+.hobbies li {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+.hobbies li:hover {
+  transform: translateY(-5px);
+  background: #f0f8ff;
+}
+
+/* Learning journey / skills table */
+.journey table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+.journey th, .journey td {
+  text-align: left;
+  padding: 0.75rem;
+  border-bottom: 1px solid #eee;
+}
+.journey th {
+  background: #f0f0f0;
+}
+.journey tr:hover {
+  background: #fafafa;
+}
+
+/* Skill badges / tags */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.skill-tag {
+  background: #007BFF;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+.skill-tag:hover {
+  background: #0056b3;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin: 4rem 0 2rem;
+  font-size: 0.9rem;
+  color: #777;
+}
